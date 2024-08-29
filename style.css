@@ -66,15 +66,26 @@ main{
             height: 2em;
             border-radius: 50%;
         }
-        .icon-minus{
+        /* .icon-minus{
             background-image: url('./assets/images/icon-minus.svg');
-        }
+        } */
     }
 }
 
 #faqs-container, .faqs{
     display: grid;
     grid-gap: 10px;
+}
+
+main .toggle{
+    .div-question{
+        .icon-container{
+            background-image: url('./assets/images/icon-minus.svg');
+        }
+    }
+    .div-answer{
+        display: none;
+    }
 }
 main h1::before{
         content: '';

@@ -27,5 +27,11 @@ function uploadingFaqs(data){
 }
 function hideShow(){
     const icon = document.querySelectorAll('.icon-container');
-    icon.forEach(element=> element.addEventListener('click', e => element.classList.toggle('icon-minus')))
+    icon.forEach(element=> 
+        element.addEventListener('click', e =>{
+            const divFaqs = e.target.closest('.faqs');
+            divFaqs.classList.toggle('toggle');
+
+        })
+    )
 }
