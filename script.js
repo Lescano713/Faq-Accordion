@@ -16,7 +16,6 @@ function uploadingFaqs(data){
         <h2>${element.question}</h2>
         <div class="icon-container"></div>
         `;
-
         divAnswer.innerHTML =`
         <p>${element.answer}</p>
         `;
@@ -24,4 +23,9 @@ function uploadingFaqs(data){
         div.append(divQuestion,divAnswer);
         container.appendChild(div);
     });
+    hideShow()
+}
+function hideShow(){
+    const icon = document.querySelectorAll('.icon-container');
+    icon.forEach(element=> element.addEventListener('click', e => element.classList.toggle('icon-minus')))
 }

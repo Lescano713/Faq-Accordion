@@ -66,6 +66,9 @@ main{
             height: 2em;
             border-radius: 50%;
         }
+        .icon-minus{
+            background-image: url('./assets/images/icon-minus.svg');
+        }
     }
 }
 
