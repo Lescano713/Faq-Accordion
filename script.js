@@ -6,8 +6,8 @@ fetch('data.json')
 
 function uploadingFaqs(data){
     data.forEach((element, index) => { 
-        const div = document.createElement('div');
-        div.classList.add('faqs')
+        const article = document.createElement('article');
+        article.classList.add('faqs')
         const buttonQuestion = document.createElement('button');
         buttonQuestion.classList.add('button-question');
         buttonQuestion.type = 'button';
@@ -28,8 +28,8 @@ function uploadingFaqs(data){
         <p>${element.answer}</p>
         `;
 
-        div.append(buttonQuestion,divAnswer);
-        container.appendChild(div);
+        article.append(buttonQuestion,divAnswer);
+        container.appendChild(article);
     });
     hideShow()
 }
