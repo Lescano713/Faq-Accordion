@@ -42,9 +42,9 @@ main{
         font-size: 50px;
         align-items: center;
     }
-    /* .faqs{
-
-    } */
+    .div-answer{
+        display: none;
+    }
     .button-question{
         display: grid;
         grid-template-columns: 1fr 3em;
@@ -78,13 +78,13 @@ main{
 }
 
 main .toggle{
-    .div-question{
+    .button-question{
         .icon-container{
             background-image: url('./assets/images/icon-minus.svg');
         }
     }
     .div-answer{
-        display: none;
+        display: block;
     }
 }
 main h1::before{
