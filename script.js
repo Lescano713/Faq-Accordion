@@ -8,11 +8,11 @@ function uploadingFaqs(data){
     data.forEach(element => { 
         const div = document.createElement('div');
         div.classList.add('faqs')
-        const divQuestion = document.createElement('div');
-        divQuestion.classList.add('div-question');
+        const buttonQuestion = document.createElement('button');
+        buttonQuestion.classList.add('button-question');
         const divAnswer = document.createElement('div');
         divAnswer.classList.add('div-answer');
-        divQuestion.innerHTML = `
+        buttonQuestion.innerHTML = `
         <h2>${element.question}</h2>
         <div class="icon-container"></div>
         `;
@@ -20,7 +20,7 @@ function uploadingFaqs(data){
         <p>${element.answer}</p>
         `;
 
-        div.append(divQuestion,divAnswer);
+        div.append(buttonQuestion,divAnswer);
         container.appendChild(div);
     });
     hideShow()
