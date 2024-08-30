@@ -3,6 +3,7 @@
     --White: hsl(0, 0%, 100%);
     --LightPink: hsl(275, 100%, 97%);
     --GrayishPurple: hsl(292, 16%, 49%);
+    --hover: hsl(281, 75%, 52%);
     --DarkPurple: hsl(292, 42%, 14%);
     --Font-size-paragraph: 16px
 }
@@ -28,10 +29,11 @@ body,main{
 }
 main{
     background-color: white;
-    margin: -8em;
-    max-width: 80%;
-    width: 35em;
-    padding: 1.4em;
+    margin: -8em 0 2.5em 0;
+    max-width: 75%;
+    width: 33em;
+    padding: 1.7em;
+    box-shadow: 0 0 20px 10px hsla(293, 33%, 21%, 0.144);
     border-radius: 10px;
     h1{
         display: flex;
@@ -41,44 +43,67 @@ main{
         margin-bottom: 10px;
         align-items: center;
     }
-    .div-answer{
-        display: none;
-    }
-    .button-question{
-        display: grid;
-        grid-template-columns: 1fr 3em;
-        align-items: center;
-        background-color: var(--White);
-        border: none;
-        padding: 0;
-        gap: 0 10px;
-        h2{
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--DarkPurple);
-            text-align: left;
-        }
-        p{
-            font-size: 16px;
-            color: var(--GrayishPurple);
-        }
-        .icon-container{
-            cursor: pointer;
-            background-image: url('./assets/images/icon-plus.svg');
-            justify-self: end;
-            width: 2em;
-            height: 2em;
-            border-radius: 50%;
-        }
-    }
+}
+main h1::before{
+    content: '';
+    width: 40px;
+    background: url('./assets/images/icon-star.svg') no-repeat;
+    height: 50px;
+    margin-right: 0.4em;
+    align-self: flex-end;
 }
 
 #faqs-container, .faqs{
+    width: 100%;
     display: grid;
-    grid-gap: 10px;
 }
 
-main .toggle{
+#faqs-container{
+    .faqs{
+        padding: 1.5em 0;
+        .div-answer{
+            display: none;
+            padding: 0.5em 0;
+        }
+        .button-question{
+            display: grid;
+            grid-template-columns: 1fr 3em;
+            align-items: center;
+            background-color: var(--White);
+            border: none;
+            padding: 0;
+            gap: 0 10px;
+            h2{
+                font-size: 17.5px;
+                font-weight: 700;
+                color: var(--DarkPurple);
+                text-align: left;
+                &:hover{
+                    color: var(--hover);
+                    cursor: pointer;
+                }
+            }
+            p{
+                font-size: 16px;
+                color: var(--GrayishPurple);
+            }
+            .icon-container{
+                cursor: pointer;
+                background-image: url('./assets/images/icon-plus.svg');
+                justify-self: end;
+                width: 2em;
+                height: 2em;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+#faqs-container article:not(:last-child){
+    border-bottom: 1px solid hsla(293, 26%, 34%, 0.144);
+}
+
+main #faqs-container .toggle{
     .button-question{
         .icon-container{
             background-image: url('./assets/images/icon-minus.svg');
@@ -87,10 +112,4 @@ main .toggle{
     .div-answer{
         display: block;
     }
-}
-main h1::before{
-        content: '';
-        width: 40px;
-        background: url('./assets/images/icon-star.svg') no-repeat;
-        height: 50px;
 }
