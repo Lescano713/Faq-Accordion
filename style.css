@@ -12,7 +12,7 @@
     font-family: 'Work Sans';
 }
 body{
-    width: 100dvw;
+    width: 100%;
     min-height: 100dvh;
     background-color: var(--LightPink);
 }
@@ -42,22 +42,25 @@ main{
         font-size: 50px;
         align-items: center;
     }
-    h2{
-        font-size: 20px;
-        color: var(--DarkPurple);
-    }
-    p{
-        font-size: 16px;
-        color: var(--GrayishPurple);
-    }
     /* .faqs{
 
     } */
-    .div-question{
+    .button-question{
         display: grid;
         grid-template-columns: 1fr 3em;
         align-items: center;
+        background-color: var(--White);
+        border: none;
         gap: 0 10px;
+        h2{
+            font-size: 20px;
+            color: var(--DarkPurple);
+            text-align: left;
+        }
+        p{
+            font-size: 16px;
+            color: var(--GrayishPurple);
+        }
         .icon-container{
             cursor: pointer;
             background-image: url('./assets/images/icon-plus.svg');
@@ -66,9 +69,6 @@ main{
             height: 2em;
             border-radius: 50%;
         }
-        /* .icon-minus{
-            background-image: url('./assets/images/icon-minus.svg');
-        } */
     }
 }
 
