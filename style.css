@@ -61,34 +61,38 @@ main h1::before{
 #faqs-container{
     .faqs{
         padding: 1.5em 0;
+        transition: all 0.4s ease;
         .div-answer{
             display: none;
             padding: 0.5em 0;
-        }
-        .button-question{
-            display: grid;
-            grid-template-columns: 1fr 3em;
-            align-items: center;
-            background-color: var(--White);
-            border: none;
-            padding: 0;
-            gap: 0 10px;
-            h2{
-                font-size: 17.5px;
-                font-weight: 700;
-                color: var(--DarkPurple);
-                text-align: left;
-                &:hover{
-                    color: var(--hover);
-                    cursor: pointer;
-                }
-            }
             p{
                 font-size: 16px;
                 color: var(--GrayishPurple);
             }
-            .icon-container{
+        }
+        .button-question{
+            display: grid;
+            cursor: pointer;
+            grid-template-columns: 1fr 3em;
+            align-items: center;
+            background-color: var(--White);
+            border: none;
+            padding: 0.5em;
+            h2{
+                font-size: 17.5px;
+                font-weight: 700;
+                color: var(--DarkPurple);
+                transition: all 0.3s ease;
+                text-align: left;
+            }
+            &:hover h2{
+                color: var(--hover);
                 cursor: pointer;
+            }
+            &:focus{
+                outline: 2px solid var(--hover);
+            }
+            .icon-container{
                 background-image: url('./assets/images/icon-plus.svg');
                 justify-self: end;
                 width: 2em;
