@@ -68,6 +68,7 @@ main h1::before{
             p{
                 font-size: 16px;
                 color: var(--GrayishPurple);
+                padding: 0.5em;
             }
         }
         .button-question{
