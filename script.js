@@ -34,19 +34,44 @@ function uploadingFaqs(data){
     hideShow()
 }
 function hideShow(){
-    const icon = document.querySelectorAll('.icon-container');
-    icon.forEach(element=> 
-        element.addEventListener('click', e =>{
-            const divFaqs = e.target.closest('.faqs');
-            const divAnswer =divFaqs.querySelector('.div-answer');
-            const button = divFaqs.querySelector('button');
-            const isExpanded = button.getAttribute('aria-expanded') === 'true'
+    const buttons = document.querySelectorAll('.button-question');
+    buttons.forEach((element,index)=>{
+        element.addEventListener('click', e => toggle(e))
+        element.addEventListener('keydown', (e) => keyDown(e,index,buttons))
+    })
+}
+function toggle(e){
+    const divFaqs = e.target.closest('.faqs');
+    const divAnswer =divFaqs.querySelector('.div-answer');
+    const isExpanded = e.target.getAttribute('aria-expanded') === 'true'
 
-            button.setAttribute('aria-expanded', !isExpanded);
-            divAnswer.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
-            
-            divFaqs.classList.toggle('toggle');
+    e.target.setAttribute('aria-expanded', !isExpanded);
+    divAnswer.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
+    
+    divFaqs.classList.toggle('toggle');
+}
 
-        })
-    )
+function keyDown(e,index,buttons){
+    switch (e.key) {
+        case ' ':
+            e.preventDefault();
+            buttons[index].click();
+            break;
+        case 'ArrowUp':
+            e.preventDefault();
+            if (index > 0) {
+                buttons[index -1].focus()
+            }
+            break;
+
+        case 'ArrowDown':
+            e.preventDefault();
+            if (index < buttons.length -1) {
+                buttons[index+1].focus()
+            }
+        break;
+    
+        default:
+            break;
+    }
 }
