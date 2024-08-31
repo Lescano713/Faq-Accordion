@@ -12,11 +12,12 @@ function uploadingFaqs(data){
         buttonQuestion.classList.add('button-question');
         buttonQuestion.type = 'button';
         buttonQuestion.setAttribute('aria-expanded', 'false');
-        buttonQuestion.setAttribute('aria-controls',`answer${index}`)
+        buttonQuestion.setAttribute('aria-controls',`answer${index}`);
+        buttonQuestion.setAttribute('aria-label', `Toggle answer to question ${index + 1} of ${data.length}`)
 
         buttonQuestion.innerHTML = `
         <h2>${element.question}</h2>
-        <div class="icon-container"></div>
+        <div class="icon-container" aria-hidden="true" ></div>
         `;
 
         const divAnswer = document.createElement('div');
