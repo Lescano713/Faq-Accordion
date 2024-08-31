@@ -12,7 +12,7 @@ function uploadingFaqs(data){
         buttonQuestion.classList.add('button-question');
         buttonQuestion.type = 'button';
         buttonQuestion.setAttribute('aria-expanded', 'false');
-        buttonQuestion.setAttribute('aria-controls',`answer-id${index}`)
+        buttonQuestion.setAttribute('aria-controls',`answer${index}`)
 
         buttonQuestion.innerHTML = `
         <h2>${element.question}</h2>
