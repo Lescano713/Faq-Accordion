@@ -1,7 +1,5 @@
 # Frontend Mentor - FAQ accordion solution
 
-This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
-
 <div align="left">
   <a href="https://www.linkedin.com/in/danae-lescano-salvatierra" target="_blank">
     <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"/>
@@ -50,25 +48,58 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
+- JavaScript
+- EventListener
 
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+<p>I learned how to apply styles to different child elements of the same parent.</p>
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+main #faqs-container .toggle{
+    .button-question{
+        .icon-container{
+            background-image: url('./assets/images/icon-minus.svg');
+        }
+    }
+    .div-answer{
+        display: block;
+    }
 }
 ```
+<p>I explored the use of ARIA labels to make the page more accessible and improve navigation for users with screen readers.</p>
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+buttonQuestion.setAttribute('aria-expanded', 'false');
+buttonQuestion.setAttribute('aria-controls',`answer-id${index}`)
+```
+<p>I practiced using a switch statement instead of multiple if conditions, and I implemented keyboard functionality for better user interaction.</p>
+
+```js
+function keyDown(e,index,buttons){
+    switch (e.key) {
+        case ' ':
+            e.preventDefault();
+            buttons[index].click();
+            break;
+        case 'ArrowUp':
+            e.preventDefault();
+            if (index > 0) {
+                buttons[index -1].focus()
+            }
+            break;
+
+        case 'ArrowDown':
+            e.preventDefault();
+            if (index < buttons.length -1) {
+                buttons[index+1].focus()
+            }
+        break;
+    
+        default:
+            break;
+    }
 }
 ```
 
